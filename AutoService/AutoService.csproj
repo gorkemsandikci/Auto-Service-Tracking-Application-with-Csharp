@@ -72,7 +72,10 @@
     <Compile Include="Controllers\Mailer.cs" />
     <Compile Include="Controllers\Tools.cs" />
     <Compile Include="Models\Arac.cs" />
+    <Compile Include="Models\Dosya.cs" />
+    <Compile Include="Models\DosyaKategori.cs" />
     <Compile Include="Models\Enumlar.cs" />
+    <Compile Include="Models\Foto.cs" />
     <Compile Include="Views\Arac\AracEkleForm.cs">
       <SubType>Form</SubType>
     </Compile>

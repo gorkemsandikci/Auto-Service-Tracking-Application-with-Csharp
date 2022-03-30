@@ -19,5 +19,7 @@ namespace AutoService
         public int KullaniciID { get; set; }
         public string Ad { get; set; }
         public int Markaid { get; set; }
+        public List<Foto> Fotolar { get; set; }
+        public List<Dosya> Dosyalar { get; set; }
     }
 }
