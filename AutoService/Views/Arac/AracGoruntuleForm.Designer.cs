@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.gbAracGoruntule = new System.Windows.Forms.GroupBox();
-            this.btnAracFotoYukle = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSil = new System.Windows.Forms.Button();
-            this.btnAracDuzenle = new System.Windows.Forms.Button();
+            this.gbFotos = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.groupBoxDosyaYukle = new System.Windows.Forms.GroupBox();
+            this.txtDosya = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBoxAracListesi = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.comboBoxSecim = new System.Windows.Forms.ComboBox();
             this.btnAracGoruntule = new System.Windows.Forms.Button();
-            this.btnAracEkle = new System.Windows.Forms.Button();
-            this.listboxAltAracListesi = new System.Windows.Forms.ListBox();
+            this.listboxDosyaListesi = new System.Windows.Forms.ListBox();
             this.lblModel = new System.Windows.Forms.Label();
             this.lblMarka = new System.Windows.Forms.Label();
             this.lblRenk = new System.Windows.Forms.Label();
@@ -48,18 +52,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Plaka = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openCarFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.flowLayoutFotolar = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnAracFotoYukle = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbAracGoruntule.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbFotos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBoxDosyaYukle.SuspendLayout();
+            this.groupBoxAracListesi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbAracGoruntule
             // 
             this.gbAracGoruntule.BackColor = System.Drawing.Color.Transparent;
+            this.gbAracGoruntule.Controls.Add(this.gbFotos);
+            this.gbAracGoruntule.Controls.Add(this.groupBoxDosyaYukle);
             this.gbAracGoruntule.Controls.Add(this.btnAracFotoYukle);
-            this.gbAracGoruntule.Controls.Add(this.groupBox1);
+            this.gbAracGoruntule.Controls.Add(this.groupBoxAracListesi);
             this.gbAracGoruntule.Controls.Add(this.lblModel);
             this.gbAracGoruntule.Controls.Add(this.lblMarka);
             this.gbAracGoruntule.Controls.Add(this.lblRenk);
@@ -78,77 +90,131 @@
             this.gbAracGoruntule.ForeColor = System.Drawing.Color.White;
             this.gbAracGoruntule.Location = new System.Drawing.Point(12, 7);
             this.gbAracGoruntule.Name = "gbAracGoruntule";
-            this.gbAracGoruntule.Size = new System.Drawing.Size(735, 506);
+            this.gbAracGoruntule.Size = new System.Drawing.Size(601, 506);
             this.gbAracGoruntule.TabIndex = 3;
             this.gbAracGoruntule.TabStop = false;
             this.gbAracGoruntule.Text = "Araç Görüntüle";
             // 
-            // btnAracFotoYukle
+            // gbFotos
             // 
-            this.btnAracFotoYukle.BackColor = System.Drawing.Color.Black;
-            this.btnAracFotoYukle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAracFotoYukle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAracFotoYukle.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAracFotoYukle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAracFotoYukle.Font = new System.Drawing.Font("Montserrat SemiBold", 8.75F, System.Drawing.FontStyle.Bold);
-            this.btnAracFotoYukle.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnAracFotoYukle.Location = new System.Drawing.Point(136, 31);
-            this.btnAracFotoYukle.Name = "btnAracFotoYukle";
-            this.btnAracFotoYukle.Size = new System.Drawing.Size(141, 91);
-            this.btnAracFotoYukle.TabIndex = 10;
-            this.btnAracFotoYukle.Text = "E K L E";
-            this.btnAracFotoYukle.UseVisualStyleBackColor = false;
-            this.btnAracFotoYukle.Click += new System.EventHandler(this.btnAracFotoYukle_Click);
+            this.gbFotos.BackColor = System.Drawing.Color.Transparent;
+            this.gbFotos.Controls.Add(this.flowLayoutFotolar);
+            this.gbFotos.Controls.Add(this.pictureBox3);
+            this.gbFotos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gbFotos.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.gbFotos.ForeColor = System.Drawing.Color.White;
+            this.gbFotos.Location = new System.Drawing.Point(6, 368);
+            this.gbFotos.Name = "gbFotos";
+            this.gbFotos.Size = new System.Drawing.Size(589, 132);
+            this.gbFotos.TabIndex = 25;
+            this.gbFotos.TabStop = false;
+            this.gbFotos.Text = "Fotoğraflar";
+            this.gbFotos.Visible = false;
             // 
-            // groupBox1
+            // pictureBox3
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.btnSil);
-            this.groupBox1.Controls.Add(this.btnAracDuzenle);
-            this.groupBox1.Controls.Add(this.btnAracGoruntule);
-            this.groupBox1.Controls.Add(this.btnAracEkle);
-            this.groupBox1.Controls.Add(this.listboxAltAracListesi);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(293, 8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(436, 492);
-            this.groupBox1.TabIndex = 23;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Araç Listesi";
+            this.pictureBox3.Image = global::AutoService.Properties.Resources.photo;
+            this.pictureBox3.Location = new System.Drawing.Point(9, 23);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 103);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
-            // btnSil
+            // groupBoxDosyaYukle
             // 
-            this.btnSil.BackColor = System.Drawing.Color.Black;
-            this.btnSil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSil.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnSil.Font = new System.Drawing.Font("Montserrat SemiBold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.btnSil.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnSil.Location = new System.Drawing.Point(332, 398);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(98, 80);
-            this.btnSil.TabIndex = 9;
-            this.btnSil.Text = "S İ L";
-            this.btnSil.UseVisualStyleBackColor = false;
+            this.groupBoxDosyaYukle.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxDosyaYukle.Controls.Add(this.txtDosya);
+            this.groupBoxDosyaYukle.Controls.Add(this.button2);
+            this.groupBoxDosyaYukle.Controls.Add(this.button1);
+            this.groupBoxDosyaYukle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxDosyaYukle.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBoxDosyaYukle.ForeColor = System.Drawing.Color.White;
+            this.groupBoxDosyaYukle.Location = new System.Drawing.Point(293, 8);
+            this.groupBoxDosyaYukle.Name = "groupBoxDosyaYukle";
+            this.groupBoxDosyaYukle.Size = new System.Drawing.Size(301, 60);
+            this.groupBoxDosyaYukle.TabIndex = 24;
+            this.groupBoxDosyaYukle.TabStop = false;
+            this.groupBoxDosyaYukle.Text = "Dosya Yükle";
+            this.groupBoxDosyaYukle.Visible = false;
             // 
-            // btnAracDuzenle
+            // txtDosya
             // 
-            this.btnAracDuzenle.BackColor = System.Drawing.Color.Black;
-            this.btnAracDuzenle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAracDuzenle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAracDuzenle.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAracDuzenle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAracDuzenle.Font = new System.Drawing.Font("Montserrat SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnAracDuzenle.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnAracDuzenle.Location = new System.Drawing.Point(225, 398);
-            this.btnAracDuzenle.Name = "btnAracDuzenle";
-            this.btnAracDuzenle.Size = new System.Drawing.Size(101, 80);
-            this.btnAracDuzenle.TabIndex = 8;
-            this.btnAracDuzenle.Text = "DÜZENLE";
-            this.btnAracDuzenle.UseVisualStyleBackColor = false;
+            this.txtDosya.Location = new System.Drawing.Point(83, 24);
+            this.txtDosya.Name = "txtDosya";
+            this.txtDosya.Size = new System.Drawing.Size(135, 24);
+            this.txtDosya.TabIndex = 9;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Black;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Montserrat SemiBold", 8.75F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.Lime;
+            this.button2.Location = new System.Drawing.Point(224, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 29);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "YÜKLE";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Montserrat SemiBold", 8.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(6, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(71, 27);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "GÖZAT";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBoxAracListesi
+            // 
+            this.groupBoxAracListesi.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxAracListesi.Controls.Add(this.pictureBox2);
+            this.groupBoxAracListesi.Controls.Add(this.comboBoxSecim);
+            this.groupBoxAracListesi.Controls.Add(this.btnAracGoruntule);
+            this.groupBoxAracListesi.Controls.Add(this.listboxDosyaListesi);
+            this.groupBoxAracListesi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBoxAracListesi.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold);
+            this.groupBoxAracListesi.ForeColor = System.Drawing.Color.White;
+            this.groupBoxAracListesi.Location = new System.Drawing.Point(293, 8);
+            this.groupBoxAracListesi.Name = "groupBoxAracListesi";
+            this.groupBoxAracListesi.Size = new System.Drawing.Size(301, 354);
+            this.groupBoxAracListesi.TabIndex = 23;
+            this.groupBoxAracListesi.TabStop = false;
+            this.groupBoxAracListesi.Text = "Araç Listesi";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::AutoService.Properties.Resources.add;
+            this.pictureBox2.Location = new System.Drawing.Point(7, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(46, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
+            // 
+            // comboBoxSecim
+            // 
+            this.comboBoxSecim.FormattingEnabled = true;
+            this.comboBoxSecim.Location = new System.Drawing.Point(59, 24);
+            this.comboBoxSecim.Name = "comboBoxSecim";
+            this.comboBoxSecim.Size = new System.Drawing.Size(235, 26);
+            this.comboBoxSecim.TabIndex = 10;
+            this.comboBoxSecim.SelectedIndexChanged += new System.EventHandler(this.comboBoxSecim_SelectedIndexChanged);
             // 
             // btnAracGoruntule
             // 
@@ -159,39 +225,23 @@
             this.btnAracGoruntule.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAracGoruntule.Font = new System.Drawing.Font("Montserrat SemiBold", 8.75F, System.Drawing.FontStyle.Bold);
             this.btnAracGoruntule.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnAracGoruntule.Location = new System.Drawing.Point(115, 398);
+            this.btnAracGoruntule.Location = new System.Drawing.Point(98, 264);
             this.btnAracGoruntule.Name = "btnAracGoruntule";
             this.btnAracGoruntule.Size = new System.Drawing.Size(104, 80);
             this.btnAracGoruntule.TabIndex = 7;
             this.btnAracGoruntule.Text = "GÖRÜNTÜLE";
             this.btnAracGoruntule.UseVisualStyleBackColor = false;
             // 
-            // btnAracEkle
+            // listboxDosyaListesi
             // 
-            this.btnAracEkle.BackColor = System.Drawing.Color.Black;
-            this.btnAracEkle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAracEkle.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAracEkle.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnAracEkle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAracEkle.Font = new System.Drawing.Font("Montserrat SemiBold", 8.75F, System.Drawing.FontStyle.Bold);
-            this.btnAracEkle.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnAracEkle.Location = new System.Drawing.Point(6, 398);
-            this.btnAracEkle.Name = "btnAracEkle";
-            this.btnAracEkle.Size = new System.Drawing.Size(103, 80);
-            this.btnAracEkle.TabIndex = 6;
-            this.btnAracEkle.Text = "E K L E";
-            this.btnAracEkle.UseVisualStyleBackColor = false;
-            // 
-            // listboxAltAracListesi
-            // 
-            this.listboxAltAracListesi.BackColor = System.Drawing.Color.Black;
-            this.listboxAltAracListesi.ForeColor = System.Drawing.Color.White;
-            this.listboxAltAracListesi.FormattingEnabled = true;
-            this.listboxAltAracListesi.ItemHeight = 18;
-            this.listboxAltAracListesi.Location = new System.Drawing.Point(6, 23);
-            this.listboxAltAracListesi.Name = "listboxAltAracListesi";
-            this.listboxAltAracListesi.Size = new System.Drawing.Size(424, 364);
-            this.listboxAltAracListesi.TabIndex = 0;
+            this.listboxDosyaListesi.BackColor = System.Drawing.Color.Black;
+            this.listboxDosyaListesi.ForeColor = System.Drawing.Color.White;
+            this.listboxDosyaListesi.FormattingEnabled = true;
+            this.listboxDosyaListesi.ItemHeight = 18;
+            this.listboxDosyaListesi.Location = new System.Drawing.Point(6, 59);
+            this.listboxDosyaListesi.Name = "listboxDosyaListesi";
+            this.listboxDosyaListesi.Size = new System.Drawing.Size(288, 202);
+            this.listboxDosyaListesi.TabIndex = 0;
             // 
             // lblModel
             // 
@@ -307,9 +357,37 @@
             this.Plaka.TabIndex = 1;
             this.Plaka.Text = "Plaka  :";
             // 
+            // openCarFileDialog
+            // 
+            this.openCarFileDialog.FileName = "openFileDialog1";
+            // 
+            // flowLayoutFotolar
+            // 
+            this.flowLayoutFotolar.AutoScroll = true;
+            this.flowLayoutFotolar.Location = new System.Drawing.Point(115, 23);
+            this.flowLayoutFotolar.Name = "flowLayoutFotolar";
+            this.flowLayoutFotolar.Size = new System.Drawing.Size(466, 100);
+            this.flowLayoutFotolar.TabIndex = 1;
+            // 
+            // btnAracFotoYukle
+            // 
+            this.btnAracFotoYukle.BackColor = System.Drawing.Color.Black;
+            this.btnAracFotoYukle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAracFotoYukle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAracFotoYukle.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAracFotoYukle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAracFotoYukle.Font = new System.Drawing.Font("Montserrat SemiBold", 8.75F, System.Drawing.FontStyle.Bold);
+            this.btnAracFotoYukle.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnAracFotoYukle.Location = new System.Drawing.Point(136, 31);
+            this.btnAracFotoYukle.Name = "btnAracFotoYukle";
+            this.btnAracFotoYukle.Size = new System.Drawing.Size(141, 91);
+            this.btnAracFotoYukle.TabIndex = 10;
+            this.btnAracFotoYukle.Text = "E K L E";
+            this.btnAracFotoYukle.UseVisualStyleBackColor = false;
+            // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::AutoService.Properties.Resources.uzcenGpp_400x400;
+            this.pictureBox1.Image = global::AutoService.Properties.Resources.a4140429df6844298f03f6a7bd509b49;
             this.pictureBox1.Location = new System.Drawing.Point(24, 29);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(91, 93);
@@ -317,17 +395,13 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // openCarFileDialog
-            // 
-            this.openCarFileDialog.FileName = "openFileDialog1";
-            // 
             // AracGoruntuleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AutoService.Properties.Resources.hexagonbg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(759, 525);
+            this.ClientSize = new System.Drawing.Size(625, 525);
             this.Controls.Add(this.gbAracGoruntule);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AracGoruntuleForm";
@@ -336,7 +410,12 @@
             this.Load += new System.EventHandler(this.AracGoruntuleForm_Load);
             this.gbAracGoruntule.ResumeLayout(false);
             this.gbAracGoruntule.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
+            this.gbFotos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.groupBoxDosyaYukle.ResumeLayout(false);
+            this.groupBoxDosyaYukle.PerformLayout();
+            this.groupBoxAracListesi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -345,12 +424,8 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbAracGoruntule;
-        private System.Windows.Forms.Button btnAracFotoYukle;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnSil;
-        private System.Windows.Forms.Button btnAracDuzenle;
+        private System.Windows.Forms.GroupBox groupBoxAracListesi;
         private System.Windows.Forms.Button btnAracGoruntule;
-        private System.Windows.Forms.Button btnAracEkle;
         private System.Windows.Forms.Label lblModel;
         private System.Windows.Forms.Label lblMarka;
         private System.Windows.Forms.Label lblRenk;
@@ -363,8 +438,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Plaka;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.ListBox listboxAltAracListesi;
+        public System.Windows.Forms.ListBox listboxDosyaListesi;
         private System.Windows.Forms.OpenFileDialog openCarFileDialog;
+        private System.Windows.Forms.ComboBox comboBoxSecim;
+        private System.Windows.Forms.GroupBox groupBoxDosyaYukle;
+        private System.Windows.Forms.TextBox txtDosya;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox gbFotos;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutFotolar;
+        private System.Windows.Forms.Button btnAracFotoYukle;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

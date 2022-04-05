@@ -14,21 +14,11 @@ namespace AutoService
     public partial class AracGoruntuleForm : Form
     {
         Arac arac = new Arac();
-        Arac aracmodel = new Arac();
-        Arac aracmarka = new Arac();
 
         public AracGoruntuleForm(int secim)
         {
-            arac = AracController.AracGetir(secim);
-            aracmodel = AracController.AracModelGetir(secim);
-            aracmarka = AracController.AracMarkaGetir(secim);
+            arac = AracController.Getir(secim);
             InitializeComponent();
-        }
-
-        private void btnAracFotoYukle_Click(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void AracGoruntuleForm_Load(object sender, EventArgs e)
@@ -37,8 +27,85 @@ namespace AutoService
             lblRenk.Text = arac.Renk;
             lblSasiNo.Text = arac.SasiNo;
             lblYil.Text = arac.Yil.ToString();
-            lblModel.Text = aracmodel.ModelAd;
-            lblMarka.Text = aracmarka.MarkaAd;
+            lblModel.Text = arac.Model.Ad;
+
+            List<DosyaKategori> dosyaKategoris = DosyaKategoriController.List();
+            dosyaKategoris.Add(new DosyaKategori { id = 0, Ad = "Hepsi" });
+            comboBoxSecim.DataSource = dosyaKategoris;
+
+            comboBoxSecim.ValueMember = "id";
+            comboBoxSecim.DisplayMember = "Ad";
+            comboBoxSecim.SelectedValue = 0;
+            listboxDosyaListesi.DataSource = arac.Dosyalar;
+            listboxDosyaListesi.ValueMember = "id";
+            listboxDosyaListesi.DisplayMember = "Ad";
+        }
+
+        private void comboBoxSecim_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxSecim.SelectedItem != null)
+            {
+
+
+                if (((DosyaKategori)comboBoxSecim.SelectedItem).id == 0)
+                {
+                    listboxDosyaListesi.DataSource = DosyaController.ListeGetir(arac.id);
+
+                }
+                else
+                {
+                    listboxDosyaListesi.DataSource = DosyaController.ListeGetir(arac.id, ((DosyaKategori)comboBoxSecim.SelectedItem).id);
+                }
+
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (((DosyaKategori)comboBoxSecim.SelectedItem).id != 0)
+            {
+                if (!Directory.Exists(Directory.GetCurrentDirectory() + "\\AracDosyalari\\"+arac.id+"\\"+ ((DosyaKategori)comboBoxSecim.SelectedItem).Ad))
+                {
+                    Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\AracDosyalari\\" + arac.id + "\\" + ((DosyaKategori)comboBoxSecim.SelectedItem).Ad);
+                }
+                string dosyaAdi = Tools.TurkceKarakterTemizle(Tools.RandomString(6) + "-" + openCarFileDialog.SafeFileName);
+                File.Copy(openCarFileDialog.FileName, (Directory.GetCurrentDirectory() + "\\AracDosyalari\\" + arac.id + "\\" + ((DosyaKategori)comboBoxSecim.SelectedItem).Ad) + "\\" + dosyaAdi);
+                DosyaController.AracDosyaEkle(new Dosya
+                {
+                    Ad = dosyaAdi,
+                    AracID = arac.id,
+                    KategoriID = ((DosyaKategori)comboBoxSecim.SelectedItem).id,
+                    Path = dosyaAdi
+                });
+            }
+            else
+            {
+                MesajKutusu kutu = new MesajKutusu("Bilgi", "Lütfen Bir Klasör Seçin!", MesajIkon.hata, MesajButton.Tamam);
+                kutu.ShowDialog();
+                kutu.Dispose();
+            }
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            if (groupBoxDosyaYukle.Visible == false)
+            {
+                groupBoxDosyaYukle.Location = groupBoxAracListesi.Location;
+                groupBoxAracListesi.Location = new Point(groupBoxAracListesi.Location.X, groupBoxAracListesi.Location.Y + groupBoxDosyaYukle.Size.Height);
+                groupBoxDosyaYukle.Visible = true;
+            }
+            else
+            {
+                groupBoxAracListesi.Location = new Point(groupBoxAracListesi.Location.X, groupBoxAracListesi.Location.Y - groupBoxDosyaYukle.Size.Height);
+                groupBoxDosyaYukle.Visible = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openCarFileDialog.ShowDialog();
+            txtDosya.Text = openCarFileDialog.FileName;
         }
     }
 }

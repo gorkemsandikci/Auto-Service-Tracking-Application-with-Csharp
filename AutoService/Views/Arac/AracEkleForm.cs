@@ -46,49 +46,13 @@ namespace AutoService
 
         private void AracEkleForm_Load(object sender, EventArgs e)
         {
-            MarkaDoldur();
         }
 
-        private void MarkaDoldur()
-        {
-            cbMarka.DisplayMember = "Ad";
-            cbMarka.ValueMember = "id"; 
-            SqlConnection conn = db.conn();
-            SqlCommand cmd = new SqlCommand("Select id,Ad from Markalar", conn);
-            conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                cbMarka.Items.Add(new Arac { Ad = dr["Ad"].ToString(), Markaid = (int)dr["id"] });
-
-            }
-
-            conn.Close();
-
-        }
-        private void ModelDoldur()
-
-        {
-            cbModel.Items.Clear();
-            cbModel.DisplayMember = "Ad";
-            cbModel.ValueMember = "ModelID";
-            SqlConnection conn = db.conn();
-            SqlCommand cmd = new SqlCommand("Select Ad, id from Modeller where MarkaID=@marka", conn);
-            cmd.Parameters.AddWithValue("@marka", (cbMarka.SelectedIndex + 1).ToString());
-            conn.Open();
-            SqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                cbModel.Items.Add(new Arac { Ad = dr["Ad"].ToString() , ModelID = (int)dr["id"]});
-            }
-            conn.Close();
-
-
-        }
+        
+       
 
         private void cbMarka_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ModelDoldur();
         }
 
         private void btnIptal_Click(object sender, EventArgs e)

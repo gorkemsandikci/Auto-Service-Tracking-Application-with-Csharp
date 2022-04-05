@@ -68,14 +68,24 @@
     </Compile>
     <Compile Include="Controllers\AracController.cs" />
     <Compile Include="Controllers\db.cs" />
+    <Compile Include="Controllers\DosyaController.cs" />
+    <Compile Include="Controllers\DosyaKategoriController.cs" />
+    <Compile Include="Controllers\FotoController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\Mailer.cs" />
+    <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\Tools.cs" />
     <Compile Include="Models\Arac.cs" />
     <Compile Include="Models\Dosya.cs" />
     <Compile Include="Models\DosyaKategori.cs" />
     <Compile Include="Models\Enumlar.cs" />
     <Compile Include="Models\Foto.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Arac\AracEkleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,14 +151,9 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Views\Arac\AracEkleForm.resx">
       <DependentUpon>AracEkleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,13 +233,13 @@
     <None Include="Resources\hexagonbg.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\uzcenGpp_400x400.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\hexagon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hexagon %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\uzcenGpp_400x400.jpg" />
+    <None Include="Resources\photo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

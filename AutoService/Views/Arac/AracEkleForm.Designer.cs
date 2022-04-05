@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gbAracEkle = new System.Windows.Forms.GroupBox();
+            this.lblModelId = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.btnIptal = new System.Windows.Forms.Button();
             this.txtPlaka = new System.Windows.Forms.TextBox();
             this.txtRenk = new System.Windows.Forms.TextBox();
             this.txtYil = new System.Windows.Forms.TextBox();
@@ -42,9 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnIptal = new System.Windows.Forms.Button();
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblModelId = new System.Windows.Forms.Label();
             this.gbAracEkle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,42 @@
             this.gbAracEkle.TabIndex = 2;
             this.gbAracEkle.TabStop = false;
             this.gbAracEkle.Text = "Araç Ekle";
+            // 
+            // lblModelId
+            // 
+            this.lblModelId.AutoSize = true;
+            this.lblModelId.Location = new System.Drawing.Point(148, 20);
+            this.lblModelId.Name = "lblModelId";
+            this.lblModelId.Size = new System.Drawing.Size(54, 20);
+            this.lblModelId.TabIndex = 15;
+            this.lblModelId.Text = "label7";
+            this.lblModelId.TextChanged += new System.EventHandler(this.lblModelId_TextChanged);
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(88, 21);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(54, 20);
+            this.lblId.TabIndex = 14;
+            this.lblId.Text = "label7";
+            // 
+            // btnIptal
+            // 
+            this.btnIptal.BackColor = System.Drawing.Color.Black;
+            this.btnIptal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnIptal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIptal.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIptal.Font = new System.Drawing.Font("Montserrat SemiBold", 12.75F, System.Drawing.FontStyle.Bold);
+            this.btnIptal.ForeColor = System.Drawing.Color.DarkOrange;
+            this.btnIptal.Location = new System.Drawing.Point(6, 221);
+            this.btnIptal.Name = "btnIptal";
+            this.btnIptal.Size = new System.Drawing.Size(105, 42);
+            this.btnIptal.TabIndex = 13;
+            this.btnIptal.Text = "İ P T A L";
+            this.btnIptal.UseVisualStyleBackColor = false;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // txtPlaka
             // 
@@ -193,42 +229,6 @@
             this.label1.Size = new System.Drawing.Size(61, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Plaka  :";
-            // 
-            // btnIptal
-            // 
-            this.btnIptal.BackColor = System.Drawing.Color.Black;
-            this.btnIptal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnIptal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIptal.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIptal.Font = new System.Drawing.Font("Montserrat SemiBold", 12.75F, System.Drawing.FontStyle.Bold);
-            this.btnIptal.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnIptal.Location = new System.Drawing.Point(6, 221);
-            this.btnIptal.Name = "btnIptal";
-            this.btnIptal.Size = new System.Drawing.Size(105, 42);
-            this.btnIptal.TabIndex = 13;
-            this.btnIptal.Text = "İ P T A L";
-            this.btnIptal.UseVisualStyleBackColor = false;
-            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(88, 21);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(54, 20);
-            this.lblId.TabIndex = 14;
-            this.lblId.Text = "label7";
-            // 
-            // lblModelId
-            // 
-            this.lblModelId.AutoSize = true;
-            this.lblModelId.Location = new System.Drawing.Point(148, 20);
-            this.lblModelId.Name = "lblModelId";
-            this.lblModelId.Size = new System.Drawing.Size(54, 20);
-            this.lblModelId.TabIndex = 15;
-            this.lblModelId.Text = "label7";
-            this.lblModelId.TextChanged += new System.EventHandler(this.lblModelId_TextChanged);
             // 
             // AracEkleForm
             // 

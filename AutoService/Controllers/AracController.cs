@@ -24,12 +24,7 @@ namespace AutoService
             conn.Close();
             return true;
         }
-        public static Arac AracListele(int aracID)
-        {
-            return new Arac()
-            {
-            };
-        }
+
         public static List<Arac> Listele(int kullaniciID)
         {
             List<Arac> list = new List<Arac>();
@@ -46,40 +41,33 @@ namespace AutoService
 
             return list;
         }
-        public static Arac AracGetir(int aracID)
+
+        public static Arac Getir(int aracID)
         {
+            Arac arac = new Arac();
+
             SqlConnection conn = db.conn();
-            SqlCommand cmd = new SqlCommand("select * from Araclar where id=@id",conn);
+            SqlCommand cmd = new SqlCommand("Select [id],[Plaka],[ModelID],[SasiNo],[Yil],[Renk],[KullaniciID] from Araclar where id=@id", conn);
             cmd.Parameters.AddWithValue("@id", aracID);
-          
-            conn.Open ();
+            conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            dr.Read ();
-            return new Arac { id = (int)dr["id"], Plaka = dr["Plaka"].ToString(), SasiNo = dr["SasiNo"].ToString(), Renk = dr["Renk"].ToString(), Yil = (int)dr["Yil"] };
+            dr.Read();
+
+            arac.Renk = dr["Renk"].ToString();
+            arac.KullaniciID = (int)dr["KullaniciID"];
+            arac.Plaka = dr["Plaka"].ToString();
+            arac.ModelID = (int)dr["ModelID"];
+            arac.SasiNo = dr["SasiNo"].ToString();
+            arac.Yil = (int)dr["Yil"];
+            arac.Dosyalar = DosyaController.ListeGetir(aracID);
+            arac.Model = ModelController.GetirByAracID(aracID);
+            arac.Fotolar = FotoController.Getir(aracID);
+            arac.id = (int)dr["id"];
+
+            return arac;
+
+
         }
-        public static Arac AracModelGetir(int aracID)
-        {
-            SqlConnection conn = db.conn(); 
-            SqlCommand cmd = new SqlCommand("Select Ad from Modeller where id=(select ModelID from Araclar where id=@id) ", conn);
-            cmd.Parameters.AddWithValue("@id", aracID);
 
-
-            conn.Open ();
-            SqlDataReader dr = cmd.ExecuteReader();
-            dr.Read ();
-            return new Arac { ModelAd = dr["Ad"].ToString() };
-        }
-        public static Arac AracMarkaGetir(int aracID)
-        {
-            SqlConnection conn = db.conn(); 
-            SqlCommand cmd = new SqlCommand("Select Ad from Markalar where id=(Select id from Modeller where id=(select ModelID from Araclar where id=@id))", conn);
-            cmd.Parameters.AddWithValue("@id", aracID);
-
-
-            conn.Open ();
-            SqlDataReader dr = cmd.ExecuteReader();
-            dr.Read ();
-            return new Arac { MarkaAd = dr["Ad"].ToString() };
-        }
     }
 }

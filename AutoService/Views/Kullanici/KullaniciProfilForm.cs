@@ -117,9 +117,9 @@ namespace AutoService
         {
 
             AracGoruntuleForm aracGoruntule = new AracGoruntuleForm((int)listboxAracListesi.SelectedValue);
-            aracGoruntule.listboxAltAracListesi.DataSource = listboxAracListesi.DataSource;
-            aracGoruntule.listboxAltAracListesi.ValueMember = "id";
-            aracGoruntule.listboxAltAracListesi.DisplayMember = "Plaka";
+            aracGoruntule.listboxDosyaListesi.DataSource = listboxAracListesi.DataSource;
+            aracGoruntule.listboxDosyaListesi.ValueMember = "id";
+            aracGoruntule.listboxDosyaListesi.DisplayMember = "Plaka";
             aracGoruntule.ShowDialog();
         }
     }
