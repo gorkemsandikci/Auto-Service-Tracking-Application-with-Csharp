@@ -80,6 +80,7 @@
     <Compile Include="Models\DosyaKategori.cs" />
     <Compile Include="Models\Enumlar.cs" />
     <Compile Include="Models\Foto.cs" />
+    <Compile Include="Models\IsEmri.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -97,6 +98,12 @@
     </Compile>
     <Compile Include="Views\Arac\AracGoruntuleForm.Designer.cs">
       <DependentUpon>AracGoruntuleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IsEmri\IsEmriAracKabulForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\IsEmri\IsEmriAracKabulForm.Designer.cs">
+      <DependentUpon>IsEmriAracKabulForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Kullanici\KullaniciListele.cs">
       <SubType>Form</SubType>
@@ -159,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Arac\AracGoruntuleForm.resx">
       <DependentUpon>AracGoruntuleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\IsEmri\IsEmriAracKabulForm.resx">
+      <DependentUpon>IsEmriAracKabulForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Kullanici\KullaniciListele.resx">
       <DependentUpon>KullaniciListele.cs</DependentUpon>

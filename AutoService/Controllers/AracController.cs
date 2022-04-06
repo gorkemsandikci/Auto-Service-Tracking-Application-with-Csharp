@@ -36,11 +36,12 @@ namespace AutoService
 
             while (dr.Read())
             {
-                list.Add(new Arac { id = (int)dr["id"], KullaniciID = kullaniciID, ModelID = (int)dr["ModelID"], Plaka = dr["Plaka"].ToString(), Renk = dr["Renk"].ToString(), SasiNo = dr["SasiNo"].ToString(), Yil = (int)dr["Yil"] });
+                list.Add(new Arac { id = (int)dr["id"], KullaniciID = kullaniciID, ModelID = (int)dr["ModelID"], Plaka = dr["Plaka"].ToString(), Renk = dr["Renk"].ToString(), SasiNo = dr["SasiNo"].ToString(), Yil = (int)dr["Yil"], Model = ModelController.GetirByAracID((int)dr["id"]) });
             }
 
             return list;
         }
+
 
         public static Arac Getir(int aracID)
         {
@@ -66,8 +67,61 @@ namespace AutoService
 
             return arac;
 
+        }
+
+
+        public static Arac Getir(string Plaka)
+        {
+            Arac arac = new Arac();
+
+            SqlConnection conn = db.conn();
+            SqlCommand cmd = new SqlCommand("Select [id],[Plaka],[ModelID],[SasiNo],[Yil],[Renk],[KullaniciID] from Araclar where Plaka LIKE @plaka", conn);
+            cmd.Parameters.AddWithValue("@plaka", Plaka);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+
+            if (dr.HasRows)
+            {
+                arac.Renk = dr["Renk"].ToString();
+                arac.KullaniciID = (int)dr["KullaniciID"];
+                arac.Plaka = dr["Plaka"].ToString();
+                arac.ModelID = (int)dr["ModelID"];
+                arac.SasiNo = dr["SasiNo"].ToString();
+                arac.Yil = (int)dr["Yil"];
+                arac.Dosyalar = DosyaController.ListeGetir((int)dr["id"]);
+                arac.Model = ModelController.GetirByAracID((int)dr["id"]);
+                arac.Fotolar = FotoController.Getir((int)dr["id"]);
+                arac.id = (int)dr["id"];
+            }
+            else
+            {
+                arac.id = 0;
+            }
+            conn.Close();
+
+            return arac;
 
         }
+        public static List<Arac> TumunuGetir()
+        {
+            List<Arac> list = new List<Arac>();
+            SqlConnection conn = db.conn();
+            SqlCommand cmd = new SqlCommand("Select * From Araclar ", conn);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                list.Add(new Arac { id = (int)dr["id"], KullaniciID = (int)dr["KullaniciID"], ModelID = (int)dr["ModelID"], Plaka = dr["Plaka"].ToString(), Renk = dr["Renk"].ToString(), SasiNo = dr["SasiNo"].ToString(), Yil = (int)dr["Yil"], Model = ModelController.GetirByAracID((int)dr["id"]) });
+            }
+
+            return list;
+        }
+    
+
+
+
 
     }
 }

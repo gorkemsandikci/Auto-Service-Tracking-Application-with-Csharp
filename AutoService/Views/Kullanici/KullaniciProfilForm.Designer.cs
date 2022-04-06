@@ -58,11 +58,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblll = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picProfilFoto = new System.Windows.Forms.PictureBox();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.gbKullaniciProfil.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // gbKullaniciProfil
@@ -92,7 +92,7 @@
             this.gbKullaniciProfil.Controls.Add(this.label2);
             this.gbKullaniciProfil.Controls.Add(this.label1);
             this.gbKullaniciProfil.Controls.Add(this.lblll);
-            this.gbKullaniciProfil.Controls.Add(this.pictureBox1);
+            this.gbKullaniciProfil.Controls.Add(this.picProfilFoto);
             this.gbKullaniciProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbKullaniciProfil.Font = new System.Drawing.Font("Montserrat SemiBold", 10F, System.Drawing.FontStyle.Bold);
             this.gbKullaniciProfil.ForeColor = System.Drawing.Color.White;
@@ -424,15 +424,15 @@
             this.lblll.TabIndex = 1;
             this.lblll.Text = "Ad  :";
             // 
-            // pictureBox1
+            // picProfilFoto
             // 
-            this.pictureBox1.Image = global::AutoService.Properties.Resources.uzcenGpp_400x400;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 29);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(91, 93);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picProfilFoto.Image = global::AutoService.Properties.Resources.uzcenGpp_400x400;
+            this.picProfilFoto.Location = new System.Drawing.Point(24, 29);
+            this.picProfilFoto.Name = "picProfilFoto";
+            this.picProfilFoto.Size = new System.Drawing.Size(91, 93);
+            this.picProfilFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picProfilFoto.TabIndex = 0;
+            this.picProfilFoto.TabStop = false;
             // 
             // openFileDialog
             // 
@@ -454,7 +454,7 @@
             this.gbKullaniciProfil.ResumeLayout(false);
             this.gbKullaniciProfil.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picProfilFoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -465,7 +465,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblll;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picProfilFoto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblAd;
         private System.Windows.Forms.Label label10;

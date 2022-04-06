@@ -55,8 +55,7 @@ namespace AutoService
             lblGsm.Text = kullanici.Gsm;
             if (kullanici.ProfilFoto != "")
             {
-                pictureBox1.ImageLocation = Application.StartupPath + "\\ProfilFotograflari\\" + kullanici.ProfilFoto;
-
+                picProfilFoto.ImageLocation = Application.StartupPath + "\\ProfilFotolari\\" + kullanici.ProfilFoto;
             }
             listboxAracListesi.DataSource = (AracController.Listele(kullanici.id));
             listboxAracListesi.ValueMember = "id";
@@ -69,41 +68,47 @@ namespace AutoService
             openFileDialog.DefaultExt = ".png";
             openFileDialog.Filter = "PNG|*.png|JPG|*.jpg|JPEG|*.jpeg";
 
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                if (!Directory.Exists(Application.StartupPath + "\\ProfilFotograflari\\"))
+                if (!Directory.Exists(Application.StartupPath + "\\ProfilFotolari\\"))
                 {
-                    Directory.CreateDirectory(Application.StartupPath + "\\ProfilFotograflari\\");
+                    Directory.CreateDirectory(Application.StartupPath + "\\ProfilFotolari\\");
                 }
 
+                DialogResult sonuc = openFileDialog.ShowDialog();
 
-
-                Image img = Image.FromFile(openFileDialog.FileName);
-                string extention = Path.GetExtension(openFileDialog.FileName);
-
-                string dosyaAdi = +kullanici.id + "-" + kullanici.Ad + kullanici.Soyad + "-ProfilFoto-" + Tools.TurkceKarakterTemizle(Tools.RandomString(6)) + extention;
-
-                img.Save(Application.StartupPath + "\\ProfilFotograflari\\" + dosyaAdi);
-
-
-
-                pictureBox1.Image = img;
-                if (KullaniciController.ProfilFotoGuncelle(dosyaAdi, kullanici.id))
+                if (sonuc == DialogResult.OK)
                 {
+                    Image img = Image.FromFile(openFileDialog.FileName);
 
-                    MesajKutusu kutu = new MesajKutusu("Başarılı", "Profil Fotoğrafı başarılı şekilde yüklenmiştir", MesajIkon.hata, MesajButton.Tamam);
-                    kutu.ShowDialog();
-                    kutu.Dispose();
+                    //yuklenen dosyanın dosya uzantısını alıyoruz.
+                    string extension = Path.GetExtension(openFileDialog.FileName);
+
+                    string dosyaAdi = kullanici.id + "-" + Tools.TurkceKarakterTemizle(kullanici.Ad + " " + kullanici.Soyad) + "-ProfilFotolari-" + Tools.RandomString(6) + extension;
+
+                    //Fotografi diske kaydettiğimiz yer burası.
+                    img.Save(Application.StartupPath + "\\ProfilFotolari\\" + dosyaAdi);
+
+                    picProfilFoto.Image = img;
+
+                    if (KullaniciController.ProfilFotoGuncelle(dosyaAdi, kullanici.id))
+                    {
+
+                        MesajKutusu kutu = new MesajKutusu("Başarılı", "Profil Fotografi Basarili Sekilde Yuklenmistir", MesajIkon.hata, MesajButton.Tamam);
+                        kutu.ShowDialog();
+                        kutu.Dispose();
+
+                    }
+                    else
+                    {
+                        MesajKutusu kutu = new MesajKutusu("Bir hata oluştu", "Fotograf yolu veri tabanına yazdırılırken hata mejdana geldi", MesajIkon.hata, MesajButton.Tamam);
+                        kutu.ShowDialog();
+                        kutu.Dispose();
+
+                    }
 
                 }
-                else
-                {
-                    MesajKutusu kutu = new MesajKutusu("Hata", "Profil fotoğrafı yüklenirken bir hata meydana geldi", MesajIkon.hata, MesajButton.Tamam);
-                    kutu.ShowDialog();
-                }
+
             }
-
-
 
         }
 
