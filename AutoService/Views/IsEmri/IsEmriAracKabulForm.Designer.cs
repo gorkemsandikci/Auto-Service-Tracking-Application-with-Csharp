@@ -29,12 +29,16 @@
         private void InitializeComponent()
         {
             this.groupBoxAracKabul = new System.Windows.Forms.GroupBox();
+            this.btnPdfOlustur = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBoxGelisSebebi = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtModel = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTeslimEden = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTeslimAlan = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAciklama = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnIptal = new System.Windows.Forms.Button();
             this.txtRenk = new System.Windows.Forms.TextBox();
@@ -48,17 +52,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPlaka = new System.Windows.Forms.TextBox();
             this.groupBoxAracKabul.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPdfOlustur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxAracKabul
             // 
             this.groupBoxAracKabul.BackColor = System.Drawing.Color.Transparent;
+            this.groupBoxAracKabul.Controls.Add(this.btnPdfOlustur);
+            this.groupBoxAracKabul.Controls.Add(this.pictureBox1);
+            this.groupBoxAracKabul.Controls.Add(this.comboBoxGelisSebebi);
+            this.groupBoxAracKabul.Controls.Add(this.label5);
             this.groupBoxAracKabul.Controls.Add(this.txtModel);
-            this.groupBoxAracKabul.Controls.Add(this.textBox4);
+            this.groupBoxAracKabul.Controls.Add(this.txtTeslimEden);
             this.groupBoxAracKabul.Controls.Add(this.label10);
-            this.groupBoxAracKabul.Controls.Add(this.textBox3);
+            this.groupBoxAracKabul.Controls.Add(this.txtTeslimAlan);
             this.groupBoxAracKabul.Controls.Add(this.label9);
-            this.groupBoxAracKabul.Controls.Add(this.textBox2);
+            this.groupBoxAracKabul.Controls.Add(this.txtAciklama);
             this.groupBoxAracKabul.Controls.Add(this.label8);
             this.groupBoxAracKabul.Controls.Add(this.btnIptal);
             this.groupBoxAracKabul.Controls.Add(this.txtRenk);
@@ -76,10 +86,46 @@
             this.groupBoxAracKabul.ForeColor = System.Drawing.Color.White;
             this.groupBoxAracKabul.Location = new System.Drawing.Point(12, 10);
             this.groupBoxAracKabul.Name = "groupBoxAracKabul";
-            this.groupBoxAracKabul.Size = new System.Drawing.Size(328, 416);
+            this.groupBoxAracKabul.Size = new System.Drawing.Size(328, 488);
             this.groupBoxAracKabul.TabIndex = 24;
             this.groupBoxAracKabul.TabStop = false;
             this.groupBoxAracKabul.Text = "Araç Kabul Formu";
+            // 
+            // btnPdfOlustur
+            // 
+            this.btnPdfOlustur.Image = global::AutoService.Properties.Resources.photo;
+            this.btnPdfOlustur.Location = new System.Drawing.Point(129, 432);
+            this.btnPdfOlustur.Name = "btnPdfOlustur";
+            this.btnPdfOlustur.Size = new System.Drawing.Size(61, 50);
+            this.btnPdfOlustur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnPdfOlustur.TabIndex = 39;
+            this.btnPdfOlustur.TabStop = false;
+            this.btnPdfOlustur.Click += new System.EventHandler(this.btnPdfOlustur_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(-27, -25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
+            // comboBoxGelisSebebi
+            // 
+            this.comboBoxGelisSebebi.FormattingEnabled = true;
+            this.comboBoxGelisSebebi.Location = new System.Drawing.Point(129, 179);
+            this.comboBoxGelisSebebi.Name = "comboBoxGelisSebebi";
+            this.comboBoxGelisSebebi.Size = new System.Drawing.Size(176, 26);
+            this.comboBoxGelisSebebi.TabIndex = 37;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(4, 179);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(110, 20);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Geliş Sebebi  :";
             // 
             // txtModel
             // 
@@ -88,50 +134,50 @@
             this.txtModel.Size = new System.Drawing.Size(176, 24);
             this.txtModel.TabIndex = 35;
             // 
-            // textBox4
+            // txtTeslimEden
             // 
-            this.textBox4.Location = new System.Drawing.Point(175, 316);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(132, 24);
-            this.textBox4.TabIndex = 33;
+            this.txtTeslimEden.Location = new System.Drawing.Point(174, 349);
+            this.txtTeslimEden.Name = "txtTeslimEden";
+            this.txtTeslimEden.Size = new System.Drawing.Size(132, 24);
+            this.txtTeslimEden.TabIndex = 33;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(175, 293);
+            this.label10.Location = new System.Drawing.Point(174, 326);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 20);
             this.label10.TabIndex = 32;
             this.label10.Text = "Teslim Eden  :";
             // 
-            // textBox3
+            // txtTeslimAlan
             // 
-            this.textBox3.Location = new System.Drawing.Point(25, 316);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(144, 24);
-            this.textBox3.TabIndex = 31;
+            this.txtTeslimAlan.Location = new System.Drawing.Point(24, 349);
+            this.txtTeslimAlan.Name = "txtTeslimAlan";
+            this.txtTeslimAlan.Size = new System.Drawing.Size(144, 24);
+            this.txtTeslimAlan.TabIndex = 31;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 293);
+            this.label9.Location = new System.Drawing.Point(21, 326);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 20);
             this.label9.TabIndex = 30;
             this.label9.Text = "Teslim Alan  :";
             // 
-            // textBox2
+            // txtAciklama
             // 
-            this.textBox2.Location = new System.Drawing.Point(25, 196);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(282, 90);
-            this.textBox2.TabIndex = 29;
+            this.txtAciklama.Location = new System.Drawing.Point(24, 229);
+            this.txtAciklama.Multiline = true;
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(282, 90);
+            this.txtAciklama.TabIndex = 29;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 173);
+            this.label8.Location = new System.Drawing.Point(20, 206);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(158, 20);
             this.label8.TabIndex = 28;
@@ -146,7 +192,7 @@
             this.btnIptal.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIptal.Font = new System.Drawing.Font("Montserrat SemiBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.btnIptal.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnIptal.Location = new System.Drawing.Point(25, 353);
+            this.btnIptal.Location = new System.Drawing.Point(24, 386);
             this.btnIptal.Name = "btnIptal";
             this.btnIptal.Size = new System.Drawing.Size(105, 42);
             this.btnIptal.TabIndex = 27;
@@ -184,12 +230,13 @@
             this.btnAracKabul.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAracKabul.Font = new System.Drawing.Font("Montserrat SemiBold", 12.75F, System.Drawing.FontStyle.Bold);
             this.btnAracKabul.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btnAracKabul.Location = new System.Drawing.Point(202, 353);
+            this.btnAracKabul.Location = new System.Drawing.Point(201, 386);
             this.btnAracKabul.Name = "btnAracKabul";
             this.btnAracKabul.Size = new System.Drawing.Size(105, 42);
             this.btnAracKabul.TabIndex = 20;
             this.btnAracKabul.Text = "K A B U L";
             this.btnAracKabul.UseVisualStyleBackColor = false;
+            this.btnAracKabul.Click += new System.EventHandler(this.btnAracKabul_Click);
             // 
             // label6
             // 
@@ -250,7 +297,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AutoService.Properties.Resources.hexagonbg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(355, 442);
+            this.ClientSize = new System.Drawing.Size(355, 512);
             this.Controls.Add(this.groupBoxAracKabul);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IsEmriAracKabulForm";
@@ -259,6 +306,8 @@
             this.Load += new System.EventHandler(this.IsEmriAracKabulForm_Load);
             this.groupBoxAracKabul.ResumeLayout(false);
             this.groupBoxAracKabul.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPdfOlustur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,11 +316,11 @@
         private System.Windows.Forms.GroupBox groupBoxAracKabul;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPlaka;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtTeslimEden;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTeslimAlan;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAciklama;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnIptal;
         private System.Windows.Forms.TextBox txtRenk;
@@ -283,5 +332,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtModel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBoxGelisSebebi;
+        private System.Windows.Forms.PictureBox btnPdfOlustur;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -15,5 +15,6 @@ namespace AutoService
 		public int Durum { get; set; }
 		public string TeslimEden { get; set; }
 		public string TeslimAlan { get; set; }
+		public IsEmriTuru IsEmriTuru { get; set; }
 	}
 }

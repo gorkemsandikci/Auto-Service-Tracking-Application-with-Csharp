@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PdfSharp">
+      <HintPath>..\..\..\PDFSharp\GDI+\PdfSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -71,6 +74,8 @@
     <Compile Include="Controllers\DosyaController.cs" />
     <Compile Include="Controllers\DosyaKategoriController.cs" />
     <Compile Include="Controllers\FotoController.cs" />
+    <Compile Include="Controllers\IsEmriController.cs" />
+    <Compile Include="Controllers\IsEmriTuruController.cs" />
     <Compile Include="Controllers\KullaniciController.cs" />
     <Compile Include="Controllers\Mailer.cs" />
     <Compile Include="Controllers\ModelController.cs" />
@@ -81,6 +86,7 @@
     <Compile Include="Models\Enumlar.cs" />
     <Compile Include="Models\Foto.cs" />
     <Compile Include="Models\IsEmri.cs" />
+    <Compile Include="Models\IsEmriTuru.cs" />
     <Compile Include="Models\Model.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
